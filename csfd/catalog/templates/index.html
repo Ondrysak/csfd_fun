@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Movie Catalog Home</h1>
+  <p>Welcome to the Movie Catalog, a website developed by <em>Ondrej Nanka</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The catalog has the following record counts:</p>
+  <ul>
+    <li><strong>Actors:</strong> {{ num_actors }}</li>
+    <li><strong>Movies:</strong> {{ num_movies }}</li>
+  </ul>
+{% endblock %}

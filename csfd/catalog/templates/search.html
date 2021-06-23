@@ -1,0 +1,38 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <form action="" method="post">
+    {% csrf_token %}
+    <table>
+    {{ form.as_table }}
+    </table>
+    <input type="submit" value="Submit">
+  </form>
+    <h1>Actor List</h1>
+  {% if actor_results %}
+  <ul>
+    {% for actor in actor_results %}
+      <li>
+        <a href="{{ actor.get_absolute_url }}">{{ actor.name }}</a>
+      </li>
+    {% endfor %}
+      </ul>
+
+  {% else %}
+    <p>There are no matching actors.</p>
+  {% endif %} 
+
+      <h1>Movie List</h1>
+  {% if movie_results %}
+  <ul>
+    {% for movie in movie_results %}
+      <li>
+        <a href="{{ movie.get_absolute_url }}">{{ movie.title }}</a>
+      </li>
+    {% endfor %}
+      </ul>
+
+  {% else %}
+    <p>There are no matching movies.</p>
+  {% endif %} 
+{% endblock %}

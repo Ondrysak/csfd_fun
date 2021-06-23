@@ -1,0 +1,12 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Title: {{ movie.title }}</h1>
+  <ul>
+        {% for actor in movie.actor_set.all %}
+          <li>
+          <a href="{{ actor.get_absolute_url }}">{{ actor.name }}</a>
+          </li>
+      {% endfor %}
+  </ul>
+{% endblock %}
