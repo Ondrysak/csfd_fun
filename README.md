@@ -22,7 +22,16 @@ docker-compose run web python3 csfd/manage.py migrate
 
 ## Download data
 
+This command accepts one `int` parameter, which specifies delay between scraping each movie in seconds. To wait one second we specify `1` below.
+
 
 ```
 docker-compose run web python3 csfd/manage.py scrape 1
+```
+
+
+## Load data from fixture
+
+```
+docker-compose run web python3 csfd/manage.py loaddata csfd/fixture.json
 ```
